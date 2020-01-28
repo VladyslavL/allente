@@ -10,6 +10,8 @@
   cursor: pointer;
   text-decoration: none;
   outline: none;
+  // css vars fallback
+  background-color: #000;
   @include respond-above(md){
     transition: opacity .25s ease-in-out;
     opacity: 1;

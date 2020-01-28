@@ -193,6 +193,7 @@ img {
   cursor: pointer;
   text-decoration: none;
   outline: none;
+  background-color: #000;
 }
 
 @media (min-width: 992px) {
