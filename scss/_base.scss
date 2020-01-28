@@ -89,6 +89,12 @@ img{
   }
 }
 
+@include respond-below(sm){
+  .show-sm{
+    display: none !important;
+  }
+}
+
 @include respond-above(xs){
   .d-xs-{
     &flex{

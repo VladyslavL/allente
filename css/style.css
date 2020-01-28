@@ -105,6 +105,12 @@ img {
           justify-content: space-between;
 }
 
+@media (max-width: 767px) {
+  .show-sm {
+    display: none !important;
+  }
+}
+
 @media (min-width: 576px) {
   .d-xs-flex {
     display: -webkit-box;
