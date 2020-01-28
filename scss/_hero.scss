@@ -1,7 +1,8 @@
 .hero{
   &__video{
-    @include respond-above(md){
+    @include respond-above(sm){
       height: calc(100vh - 8rem) !important;
+      padding-top: 0 !important;
     }
 
     &.vjs-playing{
