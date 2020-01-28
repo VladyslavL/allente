@@ -1,0 +1,470 @@
+:root {
+  --ff__primary: "Roboto", sans-serif;
+  --color__brand: #00234f;
+  --color__fb: #415893;
+  --color__fbm: #0078ff;
+  --color__in: #0075a8;
+  --color__default: #2b2e2f;
+  --color__text--primary: #000;
+  --color__text--secondary: #828282;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: var(--ff__primary);
+  font-size: 14px;
+  color: #000;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.container {
+  max-width: 112rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(black));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, black 100%);
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-caps {
+  text-transform: uppercase;
+}
+
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.d-block {
+  display: block;
+}
+
+.align-items-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.justify-content-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.justify-content-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (min-width: 576px) {
+  .d-xs-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .justify-xs-content-center {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .justify-xs-content-between {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .justify-xs-content-end {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .hide-xs {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .d-sm-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .justify-sm-content-center {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .justify-sm-content-between {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .justify-sm-content-end {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .hide-sm {
+    display: none !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .d-md-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .justify-md-content-center {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .justify-md-content-between {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.btn {
+  display: inline-block;
+  height: 5.4rem;
+  min-width: 5.4rem;
+  text-align: center;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+}
+
+@media (min-width: 992px) {
+  .btn {
+    -webkit-transition: opacity .25s ease-in-out;
+    transition: opacity .25s ease-in-out;
+    opacity: 1;
+  }
+  .btn:hover {
+    opacity: .7;
+  }
+}
+
+.btn__content {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 100%;
+}
+
+.btn__content span {
+  margin-left: 1rem;
+}
+
+.btn--default {
+  background-color: var(--color__default);
+}
+
+.btn--fb {
+  background-color: var(--color__fb);
+}
+
+.btn--in {
+  background-color: var(--color__in);
+}
+
+.btn--fbm {
+  background-color: var(--color__fbm);
+}
+
+.btn--brand {
+  background-color: var(--color__brand);
+}
+
+.topbar {
+  min-height: 8rem;
+  background-color: #fff;
+}
+
+.topbar_logo img {
+  max-height: 100%;
+}
+
+.topbar .btn {
+  min-width: 9.5rem;
+}
+
+.topbar .container {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .hero__video {
+    height: calc(100vh - 8rem) !important;
+  }
+}
+
+.hero__video.vjs-playing + .overlay {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.hero__video video {
+  outline: none;
+}
+
+.content__buttons .btn {
+  display: block;
+  margin-top: 2rem;
+}
+
+@media (min-width: 576px) {
+  .content__buttons .btn + .btn {
+    margin-left: 1rem;
+  }
+}
+
+.content__body {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .content__body {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    font-size: 1.8rem;
+    -webkit-column-count: 2;
+            column-count: 2;
+    -webkit-column-gap: 6rem;
+            column-gap: 6rem;
+  }
+}
+
+.content__body-header {
+  line-height: 1;
+  font-size: 3.6rem;
+  color: var(--color__brand);
+}
+
+@media (min-width: 768px) {
+  .content__body-header {
+    font-size: 7.2rem;
+  }
+}
+
+.content__body-list {
+  padding-left: 3rem;
+}
+
+.content__body p + p,
+.content__body h1 + p,
+.content__body ul + p,
+.content__body p + a,
+.content__body a + p {
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .content__body p + p,
+  .content__body h1 + p,
+  .content__body ul + p,
+  .content__body p + a,
+  .content__body a + p {
+    margin-top: 4rem;
+  }
+}
+
+.content__body p + ul {
+  margin-top: 1rem;
+}
+
+.content__body li + li {
+  padding-top: 1rem;
+}
+
+.carousel__container {
+  padding: 4rem 0;
+  background-image: url("../img/logo-storm121.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .carousel__container {
+    padding: 10rem 0;
+  }
+}
+
+.carousel__slide {
+  max-width: 30rem;
+}
+
+@media (min-width: 768px) {
+  .carousel__slide {
+    max-width: 34rem;
+    cursor: pointer;
+  }
+}
+
+.carousel__slide .slide__subheader {
+  font-size: 1.6rem;
+  padding-top: 2rem;
+  color: #828282;
+  font-weight: normal;
+}
+
+.carousel__slide .slide__header {
+  padding-top: 2rem;
+  font-size: 2.4rem;
+  color: var(--color__brand);
+}
+
+.carousel .slick-slide {
+  margin: 0 1rem;
+}
+
+@media (max-width: 575px) {
+  .carousel .slick-slide {
+    -webkit-transition: opacity .2s ease;
+    transition: opacity .2s ease;
+  }
+  .carousel .slick-slide:not(.slick-current) {
+    opacity: 0.2;
+  }
+}
+
+@media (min-width: 768px) {
+  .carousel .slick-slide {
+    margin: 0 2rem;
+  }
+  .carousel .slick-list {
+    margin: 0 -2rem;
+  }
+}
+
+.carousel .slick-dots {
+  position: absolute;
+  bottom: calc(100% + 2rem);
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  .carousel .slick-dots {
+    bottom: calc(100% + 4.5rem);
+  }
+}
+
+.carousel .slick-dots li {
+  padding: 0.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.carousel .slick-dots li button {
+  display: block;
+  height: 0.2rem;
+  width: 2rem;
+  border: none;
+  background-color: #000;
+  opacity: 0.1;
+  font-size: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .carousel .slick-dots li button {
+    width: 4rem;
+  }
+}
+
+.carousel .slick-dots li.slick-active button {
+  background-color: var(color__brand);
+  opacity: 1;
+}
+
+.footer {
+  padding: 2rem 1rem;
+  max-width: 116rem;
+  margin: 0 auto;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  color: #828282;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    margin-top: 6rem;
+    padding: 3rem 1rem;
+    font-size: 1.4rem;
+  }
+}
+
+.footer p {
+  padding: 0 1rem;
+}
+
+.footer a {
+  color: inherit;
+  text-decoration: none;
+}
+/*# sourceMappingURL=style.css.map */

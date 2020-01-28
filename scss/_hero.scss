@@ -1,0 +1,17 @@
+.hero{
+  &__video{
+    @include respond-above(md){
+      height: calc(100vh - 8rem) !important;
+    }
+
+    &.vjs-playing{
+      & + .overlay{
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+    video{
+      outline: none;
+    }
+  }
+}

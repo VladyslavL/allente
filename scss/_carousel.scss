@@ -1,0 +1,95 @@
+.carousel{
+  &__container{
+    padding: 4rem 0;
+    background-image: url('../img/logo-storm121.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    overflow: hidden;
+    @include respond-above(sm){
+      padding: 10rem 0;
+    }
+  }
+
+  &__slide{
+    max-width: 30rem;
+    @include respond-above(sm){
+      max-width: 34rem;
+      cursor: pointer;
+
+    }
+
+    .slide{
+      &__subheader{
+        font-size: 1.6rem;
+        padding-top: 2rem;
+        color: #828282;
+        font-weight: normal;
+      }
+
+      &__header{
+        padding-top: 2rem;
+        font-size: 2.4rem;
+        color: var(--color__brand);
+      }
+    }
+  }
+
+  .slick-slide{
+    margin: 0 1rem;
+  }
+
+  @include respond-below(xs){
+    .slick-slide{
+      transition: opacity .2s ease;
+      &:not(.slick-current){
+        opacity: 0.2;
+      }
+    }
+  }
+  @include respond-above(sm){
+    .slick-slide{
+      margin: 0 2rem;
+    }
+    .slick-list{
+      margin: 0 -2rem;
+    }
+  }
+
+  .slick-dots{
+    position: absolute;
+    bottom: calc(100% + 2rem);
+    right: 0;
+    display: flex;
+    list-style: none;
+    @include respond-above(sm){
+      bottom: calc(100% + 4.5rem);
+    }
+
+    li{
+      padding: 0.5rem;
+      line-height: 1;
+      cursor: pointer;
+      button{
+        display: block;
+        height: 0.2rem;
+        width: 2rem;
+        border: none;
+        background-color: #000;
+        opacity: 0.1;
+        font-size: 0;
+        outline: none;
+        cursor: pointer;
+        @include respond-above(sm){
+          width: 4rem;
+        }
+      }
+      &.slick-active{
+        button{
+          background-color: var(color__brand);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

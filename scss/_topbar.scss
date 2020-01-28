@@ -1,0 +1,16 @@
+.topbar{
+  min-height: 8rem;
+  background-color: #fff;
+  &_logo{
+    img{
+      max-height: 100%;
+    }
+  }
+
+  .btn{
+    min-width: 9.5rem;
+  }
+  .container{
+    width: 100%;
+  }
+}

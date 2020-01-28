@@ -1,0 +1,22 @@
+.footer{
+  padding: 2rem 1rem;
+  max-width: 116rem;
+  margin: 0 auto;
+  border-top: 1px solid rgba(#000, .2);
+  color: #828282;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  @include respond-above(sm){
+    margin-top: 6rem;
+    padding: 3rem 1rem;
+    font-size: 1.4rem;
+  }
+  p{
+    padding: 0 1rem;
+  }
+
+  a{
+    color: inherit;
+    text-decoration: none;
+  }
+}
