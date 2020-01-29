@@ -7,18 +7,21 @@ $(document).ready(function(){
     },
   });
 
-  $('.scroll_down').on('click touch', function () {
+  var clickEventType = ((document.ontouchstart!==null)?'click':'touchstart');
+  console.log(clickEventType)
+
+  $('.scroll_down').on('click', function () {
     $('html, body').animate({
-        scrollTop: $(window).height()
+        scrollTop: $('.hero').height() + $('.topbar').height() + 5
     }, 'slow');
   });
 
-  $('.hero__play').on('click touch', function () {
+  $('.hero__play').on('click', function () {
     player.play();
   });
 
   $('.carousel__slide').each(function(){
-    $(this).on('click touch', function(){
+    $(this).on('click', function(){
       console.log('clicked')
       player.src($(this).data('src'));
       $('html, body').animate({
@@ -39,8 +42,14 @@ $(document).ready(function(){
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
-          variableWidth: true
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
         }
       }
     ]

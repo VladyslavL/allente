@@ -89,7 +89,7 @@ img{
   }
 }
 
-@include respond-below(sm){
+@include respond-below(sm, null){
   .show-sm{
     display: none !important;
   }

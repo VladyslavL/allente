@@ -254,11 +254,10 @@ img {
   width: 100%;
 }
 
-@media (min-width: 768px) {
-  .hero__video {
-    height: calc(100vh - 8rem) !important;
-    padding-top: 0 !important;
-  }
+.hero {
+  max-width: 116rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero__video.vjs-playing + .overlay {
@@ -358,14 +357,7 @@ img {
 }
 
 .carousel__slide {
-  max-width: 30rem;
-}
-
-@media (min-width: 768px) {
-  .carousel__slide {
-    max-width: 34rem;
-    cursor: pointer;
-  }
+  cursor: pointer;
 }
 
 .carousel__slide .slide__subheader {
@@ -383,16 +375,14 @@ img {
 
 .carousel .slick-slide {
   outline: none;
-  margin: 0 1rem;
 }
 
-@media (max-width: 575px) {
+@media (min-width: 576px) {
   .carousel .slick-slide {
-    -webkit-transition: opacity .2s ease;
-    transition: opacity .2s ease;
+    margin: 0 1rem;
   }
-  .carousel .slick-slide:not(.slick-current) {
-    opacity: 0.2;
+  .carousel .slick-list {
+    margin: 0 -1rem;
   }
 }
 
@@ -407,12 +397,25 @@ img {
 
 .carousel .slick-dots {
   position: absolute;
+  width: 100%;
   bottom: calc(100% + 2rem);
   right: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   list-style: none;
+}
+
+@media (min-width: 576px) {
+  .carousel .slick-dots {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    margin-right: -0.5rem;
+  }
 }
 
 @media (min-width: 768px) {
