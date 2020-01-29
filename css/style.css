@@ -269,6 +269,10 @@ img {
   outline: none;
 }
 
+.hero__video .vjs-big-play-button {
+  display: none !important;
+}
+
 .content__buttons .btn {
   display: block;
   margin-top: 2rem;
@@ -292,6 +296,11 @@ img {
     padding-top: 6rem;
     padding-bottom: 6rem;
     font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .content__body-columns {
     -webkit-column-count: 2;
             column-count: 2;
     -webkit-column-gap: 6rem;
@@ -303,11 +312,13 @@ img {
   line-height: 1;
   font-size: 3.6rem;
   color: var(--color__brand);
+  padding-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
   .content__body-header {
     font-size: 7.2rem;
+    padding-bottom: 4rem;
   }
 }
 
@@ -343,10 +354,6 @@ img {
 
 .carousel__container {
   padding: 4rem 0;
-  background-image: url("../img/logo-storm121.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center;
   overflow: hidden;
 }
 

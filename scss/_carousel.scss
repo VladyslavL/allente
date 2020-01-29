@@ -1,10 +1,6 @@
 .carousel{
   &__container{
     padding: 4rem 0;
-    background-image: url('../img/logo-storm121.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;
     overflow: hidden;
     @include respond-above(sm){
       padding: 10rem 0;
@@ -28,6 +24,11 @@
       }
     }
   }
+  // &.swipping{
+  //   .carousel__slide{
+  //     pointer-events: none !important;
+  //   }
+  // }
 
   .slick-slide{
     outline: none;
