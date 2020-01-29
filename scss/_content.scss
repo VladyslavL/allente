@@ -1,5 +1,6 @@
 .content{
   &__buttons{
+    order: 99999;
     .btn{
       display: block;
       margin-top: 2rem;
@@ -58,6 +59,12 @@
       & + li{
         padding-top: 1rem;
       }
+    }
+  }
+  &__mask{
+    @include respond-below(xs, null){
+      display: flex;
+      flex-direction: column;
     }
   }
 }

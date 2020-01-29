@@ -273,6 +273,12 @@ img {
   display: none !important;
 }
 
+.content__buttons {
+  -webkit-box-ordinal-group: 100000;
+      -ms-flex-order: 99999;
+          order: 99999;
+}
+
 .content__buttons .btn {
   display: block;
   margin-top: 2rem;
@@ -350,6 +356,18 @@ img {
 
 .content__body li + li {
   padding-top: 1rem;
+}
+
+@media (max-width: 575px) {
+  .content__mask {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .carousel__container {
