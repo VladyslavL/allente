@@ -1,6 +1,6 @@
 .carousel{
   &__container{
-    padding: 4rem 0;
+    padding: 4rem 0 3rem;
     overflow: hidden;
     @include respond-above(sm){
       padding: 10rem 0;

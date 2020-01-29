@@ -371,7 +371,7 @@ img {
 }
 
 .carousel__container {
-  padding: 4rem 0;
+  padding: 4rem 0 3rem;
   overflow: hidden;
 }
 
@@ -484,7 +484,7 @@ img {
   margin: 0 auto;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   color: #828282;
-  margin-top: 2rem;
+  margin-top: 4rem;
   font-size: 1.2rem;
 }
 
