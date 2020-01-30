@@ -1,12 +1,8 @@
 .carousel{
-  &__container{
-    padding: 4rem 0 3rem;
-    overflow: hidden;
-    @include respond-above(sm){
-      padding: 10rem 0;
-    }
+  margin: 4rem 0 3rem;
+  @include respond-above(sm){
+    margin: 10rem 0;
   }
-
   &__slide{
     cursor: pointer;
     .slide{
@@ -24,11 +20,6 @@
       }
     }
   }
-  // &.swipping{
-  //   .carousel__slide{
-  //     pointer-events: none !important;
-  //   }
-  // }
 
   .slick-slide{
     outline: none;

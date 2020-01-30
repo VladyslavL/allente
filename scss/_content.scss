@@ -1,11 +1,23 @@
 .content{
   &__buttons{
     order: 99999;
+    @include respond-above(sm){
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-top: 0;
+      &::before{
+        content: "fake text";
+        font-weight: bold;
+        text-indent: -99999px;
+      }
+    }
     .btn{
       display: block;
       margin-top: 2rem;
       @include respond-above(xs){
-        & + .btn{
+        margin-top: 0;
+        &:not(:first-of-type){
           margin-left: 1rem;
         }
       }
@@ -17,8 +29,8 @@
     font-size: 1.4rem;
     line-height: 1.5;
     @include respond-above(sm){
-      padding-top: 6rem;
-      padding-bottom: 6rem;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
       font-size: 1.8rem;
     }
     &-columns{
@@ -35,6 +47,7 @@
       @include respond-above(sm){
         font-size: 7.2rem;
         padding-bottom: 4rem;
+        max-width: 50%;
       }
     }
     &-list{
@@ -62,7 +75,8 @@
     }
   }
   &__mask{
-    @include respond-below(xs, null){
+    position: relative;
+    @include respond-below(sm, null){
       display: flex;
       flex-direction: column;
     }
