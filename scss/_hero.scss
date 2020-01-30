@@ -3,18 +3,14 @@
   margin-left: auto;
   margin-right: auto;
   &__video{
-    &.vjs-playing{
+    display: block;
+    width: 100%;
+    outline: none;
+    &.playing{
       & + .overlay{
         opacity: 0;
         visibility: hidden;
       }
-    }
-    video{
-      outline: none;
-    }
-
-    .vjs-big-play-button{
-      display: none !important;
     }
   }
 }

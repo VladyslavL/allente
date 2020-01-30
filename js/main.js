@@ -1,12 +1,40 @@
 $(document).ready(function(){
-  // Init VideoJS
-  var player = videojs(document.querySelector('.video-js'), {
-    html5: {
-        hls: {
-            overrideNative: !videojs.browser.IS_SAFARI
-        },
-    },
-  });
+  // Init HLS
+  var player = document.querySelector('.hero__video');
+
+  var initHLS = function(){
+    if(Hls.isSupported()) {
+      var hls = new Hls();
+      hls.loadSource(player.src);
+      hls.attachMedia(player);
+      hls.on(Hls.Events.MANIFEST_PARSED,function() {
+        player.play();
+    });
+   }
+  }
+
+  var videoWather = function(){
+    player.addEventListener('playing', function(){
+      player.classList.remove('paused');
+      player.classList.add('playing');
+    }, false);
+    player.addEventListener('play', function(){
+      player.classList.remove('paused');
+      player.classList.add('playing');
+    }, false);
+
+    player.addEventListener('pause', function(){
+      player.classList.remove('playing');
+      player.classList.add('paused');
+    }, false);
+  }
+
+  // Determining which one method we will use
+  var clickEventType = ((document.ontouchstart!==null)?'click':'touchstart');
+  console.log(clickEventType)
+
+  initHLS();
+  videoWather();
 
   // Init carousel
   $('.carousel').slick({
@@ -48,21 +76,17 @@ $(document).ready(function(){
         event.preventDefault();
         return false;
       }
-      player.src($(this).data('src'));
+      player.src = $(this).data('src');
+      initHLS();
       $('html, body').animate({
         scrollTop: 0
       }, 'slow');
   });
 
-  // Determining which one method we will use
-  var clickEventType = ((document.ontouchstart!==null)?'click':'touchstart');
-  console.log(clickEventType)
-
   // Scroll the page on .scroll_down click
   $('.scroll_down').on(clickEventType, function () {
     $('html, body').animate({
-        // Added "5" to be sure that the player is scrolled
-        scrollTop: $('.hero').height() + $('.topbar').height() + 5
+        scrollTop: $('.hero').height() + $('.topbar').height()
     }, 'slow');
   });
 

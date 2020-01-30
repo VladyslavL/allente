@@ -249,17 +249,15 @@ img {
   margin-right: auto;
 }
 
-.hero__video.vjs-playing + .overlay {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.hero__video video {
+.hero__video {
+  display: block;
+  width: 100%;
   outline: none;
 }
 
-.hero__video .vjs-big-play-button {
-  display: none !important;
+.hero__video.playing + .overlay {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .content__buttons {

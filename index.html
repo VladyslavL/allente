@@ -12,7 +12,6 @@
 
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/vendors.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha256-UK1EiopXIL+KVhfbFa8xrmAWPeBjMVdvYMYkTAEv/HI=" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/style.css">
@@ -31,14 +30,7 @@
   </nav>
 
   <div class="hero position-relative">
-    <video-js class="hero__video video-js" preload="none" playsinline controls poster="img/poster.jpg"
-      data-setup='{"customControlsOnMobile": true, "autoplay": true, "muted": true, "aspectRatio": "16:9"}'>
-      <source src="video/lorem_vid01.mp4" type="video/mp4">
-      <p class="vjs-no-js">
-          To view this video please enable JavaScript, and consider upgrading to a web browser that
-          <a href="https://videojs.com/html5-video-support/" target="_blank" rel="noopener">supports HTML5 video</a>
-      </p>
-    </video-js>
+    <video autoplay muted controls class="hero__video" src="video/index.m3u8" type="application/x-mpegURL"></video>
 
     <div class="overlay d-flex align-items-center justify-content-center">
       <div>
@@ -108,7 +100,7 @@
             </div>
 
             <div class="carousel">
-              <div class="carousel__slide" data-src="video/lorem_vid01-2.mp4">
+              <div class="carousel__slide" data-src="video/index.m3u8">
                 <div class="slide__media position-relative">
                   <img src="img/poster.jpg" alt="">
                   <div class="overlay d-flex justify-content-center align-items-center">
@@ -121,7 +113,7 @@
                 <h2 class="slide__subheader">Subheader</h2>
                 <h1 class="slide__header text-caps">Change text here</h1>
               </div>
-              <div class="carousel__slide" data-src="video/lorem_vid01-3.mp4">
+              <div class="carousel__slide" data-src="video/index.m3u8">
                 <div class="slide__media position-relative">
                   <img src="img/poster.jpg" alt="">
                   <div class="overlay d-flex justify-content-center align-items-center">
@@ -134,7 +126,7 @@
                 <h2 class="slide__subheader">Subheader</h2>
                 <h1 class="slide__header text-caps">Change text here</h1>
               </div>
-              <div class="carousel__slide" data-src="video/lorem_vid01-4.mp4">
+              <div class="carousel__slide" data-src="video/index.m3u8">
                 <div class="slide__media position-relative">
                   <img src="img/poster.jpg" alt="">
                   <div class="overlay d-flex justify-content-center align-items-center">
@@ -147,7 +139,7 @@
                 <h2 class="slide__subheader">Subheader</h2>
                 <h1 class="slide__header text-caps">Change text here</h1>
               </div>
-              <div class="carousel__slide" data-src="video/lorem_vid01.mp4">
+              <div class="carousel__slide" data-src="video/index.m3u8">
                 <div class="slide__media position-relative">
                   <img src="img/poster.jpg" alt="">
                   <div class="overlay d-flex justify-content-center align-items-center">
@@ -174,9 +166,7 @@
   
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha256-NXRS8qVcmZ3dOv3LziwznUHPegFhPZ1F/4inU7uC8h0=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.6.4/video.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-flash/2.2.0/videojs-flash.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.15.0/videojs-contrib-hls.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
