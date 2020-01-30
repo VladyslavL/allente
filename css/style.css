@@ -274,7 +274,7 @@ img {
     margin-top: 0;
   }
   .content__buttons::before {
-    content: "fake text";
+    content: "\00A0";
     font-weight: bold;
     text-indent: -99999px;
   }
