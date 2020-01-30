@@ -5,6 +5,15 @@
   }
   &__slide{
     cursor: pointer;
+    &:hover{
+      .overlay{
+        opacity: 0;
+      }
+
+      .slide__header{
+        opacity: 0.8;
+      }
+    }
     .slide{
       &__subheader{
         font-size: 1.6rem;
@@ -17,6 +26,7 @@
         padding-top: 2rem;
         font-size: 2.4rem;
         color: var(--color__brand);
+        transition: opacity .2s ease;
       }
     }
   }
