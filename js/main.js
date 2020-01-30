@@ -10,6 +10,18 @@ $(document).ready(function(){
       hls.on(Hls.Events.MANIFEST_PARSED,function() {
         player.play();
     });
+   }else{
+     player.play();
+     console.log('no hls');
+     player.classList.add('video-js')
+     player.classList.add('vjs-default-skin')
+      var videojsPlayer = videojs(player, {
+        fluid: true
+      });
+      videojsPlayer.src(
+        {
+          src: player.src
+        });
    }
   }
 
