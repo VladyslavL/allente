@@ -30,68 +30,43 @@
       }
     }
   }
-
-  .slick-slide{
-    outline: none;
-  }
-
-  @include respond-above(xs){
-    .slick-slide{
-      margin: 0 1rem;
-    }
-    .slick-list{
-      margin: 0 -1rem;
-    }
-  }
-
-  @include respond-above(sm){
-    .slick-slide{
-      margin: 0 2rem;
-    }
-    .slick-list{
-      margin: 0 -2rem;
-    }
-  }
-
-  .slick-dots{
+}
+.tns-outer{
+  position: relative;
+  .tns-nav{
     position: absolute;
     width: 100%;
-    bottom: calc(100% + 2rem);
+    top: 2rem;
     right: 0;
     display: flex;
     justify-content: center;
     list-style: none;
     @include respond-above(xs){
       justify-content: flex-end;
-      margin-right: -0.5rem;
     }
     @include respond-above(sm){
-      bottom: calc(100% + 4.5rem);
+      top: 5rem;
     }
-
-    li{
-      padding: 0.5rem;
+  
+    button{
       line-height: 1;
       cursor: pointer;
-      button{
-        display: block;
-        height: 0.2rem;
-        width: 2rem;
-        border: none;
-        background-color: #000;
-        opacity: 0.1;
-        font-size: 0;
-        outline: none;
-        cursor: pointer;
-        @include respond-above(sm){
-          width: 4rem;
-        }
+      display: block;
+      height: 0.2rem;
+      width: 2rem;
+      border: none;
+      background-color: #000;
+      opacity: 0.1;
+      font-size: 0;
+      outline: none;
+      cursor: pointer;
+      margin-left: 1rem;
+      @include respond-above(sm){
+        width: 4rem;
       }
-      &.slick-active{
-        button{
-          background-color: var(color__brand);
+      &.tns-nav-active{
+          background-color: var(--color__brand);
           opacity: 1;
-        }
       }
     }
   }

@@ -1,4 +1,4 @@
-$(document).ready(function(){
+document.addEventListener('DOMContentLoaded', function(){
   // Init HLS
   var player = document.querySelector('.hero__video');
 
@@ -13,16 +13,19 @@ $(document).ready(function(){
    }else{
      player.play();
      console.log('no hls');
-     player.classList.add('video-js')
-     player.classList.add('vjs-default-skin')
-      var videojsPlayer = videojs(player, {
-        fluid: true
-      });
-      videojsPlayer.src(
-        {
-          src: player.src
-        });
-   }
+     if(window.MSInputMethodContext) {
+      player.classList.add('video-js')
+      player.classList.add('vjs-default-skin')
+       var videojsPlayer = videojs(player, {
+         fluid: true
+       });
+       videojsPlayer.src(
+         {
+           src: player.src
+         }
+       );
+     }
+     }
   }
 
   var videoWather = function(){
@@ -49,62 +52,75 @@ $(document).ready(function(){
   videoWather();
 
   // Init carousel
-  $('.carousel').slick({
-    dots: true,
-    arrows: false,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
+  var carousel = tns({
+    "container": '.carousel',
+    "items": 1,
+    "gutter": 0,
+    "controls": false,
+    "mouseDrag": true,
+    "responsive": {
+      "576": {
+        "items": 2,
+        "gutter": 10
       },
-      {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
+      "768": {
+        "items": 3,
+        "gutter": 20
       }
-    ]
+    },
   });
 
-  // Dssabling click event triggering on carousel dragging/swipping
+  // // Dssabling click event triggering on carousel dragging/swipping
   var isSliding = false;
-  $('.carousel').on('beforeChange', function() {
+  carousel.events.on('touchMove', function() {
       isSliding = true;
   });
-  $('.carousel').on('afterChange', function() {
+  carousel.events.on('touchEnd', function() {
       isSliding = false;
   });
-  $('.carousel').find(".carousel__slide").click(function() {
+
+  var slides = document.querySelectorAll(".carousel__slide");
+  for( i=0; i < slides.length; i++){
+    slides[i].addEventListener('click', function() {
       if (isSliding) {
         event.stopPropagation();
         event.preventDefault();
         return false;
       }
-      player.src = $(this).data('src');
+      player.src = this.getAttribute('data-src');
       initHLS();
-      $('html, body').animate({
-        scrollTop: 0
-      }, 'slow');
-  });
+      document.querySelector('.topbar').scrollIntoView({behavior: 'smooth'})
+    });
+  }
 
   // Scroll the page on .scroll_down click
-  $('.scroll_down').on(clickEventType, function () {
-    $('html, body').animate({
-        scrollTop: $('.hero').height() + $('.topbar').height()
-    }, 'slow');
+  document.querySelector('.scroll_down').addEventListener(clickEventType, function () {
+    document.querySelector('.content__buttons').scrollIntoView({behavior: 'smooth'})
   });
 
 
   // Play video on .hero__play click
-  $('.hero__play').on(clickEventType, function () {
+  document.querySelector('.hero__play').addEventListener(clickEventType, function () {
     player.play();
   });
+
+  // function for Ajax POST
+  function postAjax(url, data, success) {
+    var params = typeof data == 'string' ? data : Object.keys(data).map(
+            function(k){ return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]) }
+        ).join('&');
+
+    var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+    xhr.open('POST', url);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState>3 && xhr.status==200) { success(xhr.responseText); }
+    };
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.send(params);
+    return xhr;
+  }
+
+  // postAjax('http://foo.bar/', { p1: 1, p2: 'Hello World' }, function(data){ console.log(data); });
+
 });
