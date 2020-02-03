@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // Scroll the page on .scroll_down click
   document.querySelector('.scroll_down').addEventListener(clickEventType, function () {
-    document.querySelector('.content__buttons').scrollIntoView({behavior: 'smooth'})
+    document.querySelector('.content').scrollIntoView({behavior: 'smooth'})
   });
 
 

@@ -94,6 +94,12 @@ img {
           justify-content: space-between;
 }
 
+.justify-content-end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
 @media (max-width: 767px) {
   .show-sm {
     display: none !important;
@@ -266,20 +272,6 @@ img {
           order: 99999;
 }
 
-@media (min-width: 768px) {
-  .content__buttons {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-top: 0;
-  }
-  .content__buttons::before {
-    content: "\00A0";
-    font-weight: bold;
-    text-indent: -99999px;
-  }
-}
-
 .content__buttons .btn {
   display: block;
   margin-top: 2rem;
@@ -329,7 +321,6 @@ img {
   .content__body-header {
     font-size: 7.2rem;
     padding-bottom: 4rem;
-    max-width: 50%;
   }
 }
 
