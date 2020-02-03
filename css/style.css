@@ -235,6 +235,8 @@ img {
 .topbar {
   min-height: 8rem;
   background-color: #fff;
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem;
 }
 
 .topbar_logo img {
@@ -312,8 +314,10 @@ img {
 @media (min-width: 768px) {
   .content__body-columns {
     -webkit-column-count: 2;
+       -moz-column-count: 2;
             column-count: 2;
     -webkit-column-gap: 6rem;
+       -moz-column-gap: 6rem;
             column-gap: 6rem;
   }
 }
@@ -451,26 +455,39 @@ img {
   line-height: 1;
   cursor: pointer;
   display: block;
-  height: 0.2rem;
-  width: 2rem;
+  height: 1.2rem;
+  width: 3rem;
   border: none;
-  background-color: #000;
   opacity: 0.1;
   font-size: 0;
   outline: none;
   cursor: pointer;
-  margin-left: 1rem;
+  position: relative;
+  background-color: transparent;
+}
+
+.tns-outer .tns-nav button::before {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  background-color: #000;
 }
 
 @media (min-width: 768px) {
   .tns-outer .tns-nav button {
-    width: 4rem;
+    width: 5rem;
   }
 }
 
 .tns-outer .tns-nav button.tns-nav-active {
-  background-color: var(--color__brand);
   opacity: 1;
+}
+
+.tns-outer .tns-nav button.tns-nav-active::before {
+  background-color: var(--color__brand);
 }
 
 .footer {

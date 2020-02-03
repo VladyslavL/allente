@@ -52,21 +52,32 @@
       line-height: 1;
       cursor: pointer;
       display: block;
-      height: 0.2rem;
-      width: 2rem;
+      height: 1.2rem;
+      width: 3rem;
       border: none;
-      background-color: #000;
       opacity: 0.1;
       font-size: 0;
       outline: none;
       cursor: pointer;
-      margin-left: 1rem;
+      position: relative;
+      background-color: transparent;
+      &::before{
+        content: "";
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        bottom: 0.5rem;
+        left: 0.5rem;
+        background-color: #000;
+      }
       @include respond-above(sm){
-        width: 4rem;
+        width: 5rem;
       }
       &.tns-nav-active{
+        opacity: 1;
+        &::before{
           background-color: var(--color__brand);
-          opacity: 1;
+        }
       }
     }
   }

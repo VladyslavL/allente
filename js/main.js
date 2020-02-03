@@ -116,11 +116,51 @@ document.addEventListener('DOMContentLoaded', function(){
         if (xhr.readyState>3 && xhr.status==200) { success(xhr.responseText); }
     };
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+
     xhr.send(params);
     return xhr;
   }
 
-  // postAjax('http://foo.bar/', { p1: 1, p2: 'Hello World' }, function(data){ console.log(data); });
+  var buttons = document.querySelectorAll(".content__buttons a");
+  for( i=0; i < buttons.length; i++){
+    buttons[i].addEventListener('click', function() {
+      postAjax('{% url "register_event" uuid=phase.uuid %}', 
+              JSON.stringify({ 
+                event: 'A_CLICK',
+                originalUrl: window.location.href,
+                lpid: '{{ landing_page_id }}',
+                href: this.href,
+                title: this.title
+              }), 
+              function(data){ console.log(data); }
+      );
+      
+    });
 
+  }
+
+  player.addEventListener('play', function(){
+    if (this.seeking || this.currentTime >= 0.1) return;
+
+    postAjax('{% url "register_event" uuid=phase.uuid %}', 
+            JSON.stringify({ 
+              event: 'VID_PLAY',
+              originalUrl: window.location.href,
+              lpid: '{{ landing_page_id }}'
+            }), 
+            function(data){ console.log(data); }
+    );
+  }, false);
+
+  player.addEventListener('ended', function(){
+    postAjax('{% url "register_event" uuid=phase.uuid %}', 
+            JSON.stringify({ 
+              event: 'VID_WATCHED',
+              originalUrl: window.location.href,
+              lpid: '{{ landing_page_id }}'
+            }), 
+            function(data){ console.log(data); }
+    );
+  }, false);
 });
