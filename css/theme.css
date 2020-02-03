@@ -32,5 +32,7 @@
   --color__text--primary: #000;
   /* Secondary color of the website (footer) */
   --color__text--secondary: #828282;
+  /* Logo height */
+  --height__logo: 4rem;
 }
 /*# sourceMappingURL=theme.css.map */

@@ -6,6 +6,9 @@
 
 html{
   font-size: 10px;
+  @include respond-above(xl){
+    font-size: calc(10px + (20 - 10) * ((100vw - 1920px) / (3840 - 1920)));
+  }
 }
 
 body{
@@ -56,6 +59,10 @@ img{
   z-index: 5;
   background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,1) 100%);
   transition: all .2s ease;
+  img{
+    width: 10rem;
+    height: 10rem;
+  }
 }
 
 .text-{
@@ -93,7 +100,7 @@ img{
 }
 
 @include respond-below(sm, null){
-  .show-sm{
+  .hide-on-small-tablet{
     display: none !important;
   }
 }
@@ -117,7 +124,7 @@ img{
     }
   }
 
-  .hide-xs{
+  .hide-on-mobile{
     display: none !important;
   }
 }
@@ -140,7 +147,7 @@ img{
     }
   }
 
-  .hide-sm{
+  .show-on-small-tablet{
     display: none !important;
   }
 }

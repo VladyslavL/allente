@@ -5,6 +5,12 @@
   }
   &__slide{
     cursor: pointer;
+    .overlay{
+      img{
+        width: 7rem;
+        height: 7rem;
+      }
+    }
     &:hover{
       .overlay{
         opacity: 0;
