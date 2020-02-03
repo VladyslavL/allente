@@ -1,17 +1,42 @@
-:root {
-  // fonts
-  --ff__primary: "Roboto", sans-serif;
+/*
+  Uncomment @font-face function if you need to add custom font.
+  Please NOTE that you need add path to a font file!
+*/
+/* 
+@font-face {
+  font-family: 'wwf-webfont';
+  src: url('../fonts/NAME_OF_FONT.FORMAT');
+  font-weight: bold;
+  font-style: normal;
+}
+*/
 
-  // brand color
+/* importing font from Google Font */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+:root {
+  /* Font and font size for primary (header) text */
+  --ff__primary: "Roboto", sans-serif;
+  /* Please use rem units for better responsiveness (1rem = 10px) */
+  --fz__primary: 7.2rem;
+
+  /* Font and font size for secondary (body) text */
+  --ff__secondary: "Roboto", sans-serif;
+  /* Please use rem units for better responsiveness (1rem = 10px) */
+  --fz__secondary: 1.8rem;
+
+  /* brand color */
   --color__brand: #00234f;
 
-  // buttons background colors
+  /* buttons background colors */
   --color__fb: #415893;
   --color__fbm: #0078ff;
   --color__in: #0075a8;
   --color__default: #2b2e2f;
   
-  // text colors
+  /* Primary color of the website (content) */
   --color__text--primary: #000;
+
+  /* Secondary color of the website (footer) */
   --color__text--secondary: #828282;
 }
