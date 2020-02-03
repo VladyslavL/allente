@@ -14,3 +14,12 @@
     width: 100%;
   }
 }
+
+// flexbox fix for IE11
+@media all and (-ms-high-contrast:none){
+  *::-ms-backdrop, .topbar:after { 
+    content:'';
+    min-height:inherit;
+    font-size:0;
+  }
+}

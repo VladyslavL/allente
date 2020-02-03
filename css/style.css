@@ -249,6 +249,14 @@ img {
   width: 100%;
 }
 
+@media all and (-ms-high-contrast: none) {
+  *::-ms-backdrop, .topbar:after {
+    content: '';
+    min-height: inherit;
+    font-size: 0;
+  }
+}
+
 .hero {
   max-width: 116rem;
   margin-left: auto;
