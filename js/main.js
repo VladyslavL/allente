@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }, false);
 
     player.addEventListener('pause', function(){
+      if (this.seeking) return false;
       player.classList.remove('playing');
       player.classList.add('paused');
     }, false);
