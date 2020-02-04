@@ -111,9 +111,11 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
   // Play video on .hero__play click
-  document.querySelector('.hero__play').addEventListener(clickEventType, function () {
-    player.play();
-  });
+  if(document.querySelector('.hero__play') !== null){
+    document.querySelector('.hero__play').addEventListener(clickEventType, function () {
+      player.play();
+    });
+  }
 
   // function for Ajax POST
   function postAjax(url, data, success) {
