@@ -51,46 +51,54 @@ document.addEventListener('DOMContentLoaded', function(){
   initHLS();
   videoWather();
 
-  // Init carousel
-  var carousel = tns({
-    "container": '.carousel',
-    "items": 1,
-    "gutter": 0,
-    "controls": false,
-    "mouseDrag": true,
-    "responsive": {
-      "576": {
-        "items": 2,
-        "gutter": 10
+  if(document.querySelector('.carousel') !== null){
+    // Init carousel
+    var carousel = tns({
+      "container": '.carousel',
+      "items": 1,
+      "gutter": 0,
+      "controls": false,
+      "mouseDrag": true,
+      "responsive": {
+        "576": {
+          "items": 2,
+          "gutter": 10
+        },
+        "768": {
+          "items": 3,
+          "gutter": 20
+        }
       },
-      "768": {
-        "items": 3,
-        "gutter": 20
-      }
-    },
-  });
-
-  // // Dssabling click event triggering on carousel dragging/swipping
-  var isSliding = false;
-  carousel.events.on('touchMove', function() {
-      isSliding = true;
-  });
-  carousel.events.on('touchEnd', function() {
-      isSliding = false;
-  });
-
-  var slides = document.querySelectorAll(".carousel__slide");
-  for( i=0; i < slides.length; i++){
-    slides[i].addEventListener('click', function() {
-      if (isSliding) {
-        event.stopPropagation();
-        event.preventDefault();
-        return false;
-      }
-      player.src = this.getAttribute('data-src');
-      initHLS();
-      document.querySelector('.topbar').scrollIntoView({behavior: 'smooth'})
     });
+  
+    // // Dssabling click event triggering on carousel dragging/swipping
+    var isSliding = false;
+    carousel.events.on('touchMove', function() {
+        isSliding = true;
+    });
+    carousel.events.on('touchEnd', function() {
+        isSliding = false;
+    });
+    carousel.events.on('dragMove', function() {
+      isSliding = true;
+    });
+    carousel.events.on('dragEnd', function() {
+        isSliding = false;
+    });
+  
+    var slides = document.querySelectorAll(".carousel__slide");
+    for( i=0; i < slides.length; i++){
+      slides[i].addEventListener('click', function() {
+        if (isSliding) {
+          event.stopPropagation();
+          event.preventDefault();
+          return false;
+        }
+        player.src = this.getAttribute('data-src');
+        initHLS();
+        document.querySelector('.topbar').scrollIntoView({behavior: 'smooth'})
+      });
+    }
   }
 
   // Scroll the page on .scroll_down click

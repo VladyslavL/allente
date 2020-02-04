@@ -5,7 +5,9 @@
   border-top: 1px solid rgba(#000, .2);
   color: #828282;
   font-size: 1.2rem;
+  margin-top: 3rem;
   @include respond-above(sm){
+    margin-top: 10rem;
     padding: 3rem 1rem;
     font-size: 1.4rem;
   }

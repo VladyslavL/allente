@@ -55,7 +55,7 @@
 
   <div class="hero position-relative">
     <video autoplay playsinline muted controls id="main-video" class="hero__video playing" src="{{ phase.video_url }}" type="application/x-mpegURL">
-      <track src="track/track.vtt" kind="subtitles" srclang="en" label="English" default="default">
+      <track src="track/track.vtt" kind="subtitles" srclang="en" label="English" default>
       <track src="track/track.vtt" kind="subtitles" srclang="no" label="Norwegian">
     </video>
 

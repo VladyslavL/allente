@@ -1,7 +1,7 @@
 .carousel{
-  margin: 4rem 0 3rem;
+  margin-top: 4rem;
   @include respond-above(sm){
-    margin: 10rem 0;
+    margin-top: 10rem;
   }
   &__slide{
     cursor: pointer;
