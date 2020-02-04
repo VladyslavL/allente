@@ -1,13 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="nb" data-page-id="{{ landing_page_id }}" data-register-event='{% url "register_event" uuid=phase.uuid %}'>
+<html lang="nv" data-page-id="{{ landing_page_id }}" data-register-event='{% url "register_event" uuid=phase.uuid %}'>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="Description" content="the page description">
-  <title>Storm121 - Template</title>
+  <meta name="Description" content="{{ receiver.first_name }} utgjør en forskjell. Bli med i WWF-flokken du også!">
+  <meta property="og:type" content="video.other" />
+  <meta property="og:url" content="{{ share_url }}" />
+  <meta property="og:site_name" content="WWF" />
+  <meta property="og:title" content="WWF takker {{ receiver.job_role }} {{ receiver.first_name }} for støtten med egen film!" />
+  <meta property="og:description" content="{{ receiver.first_name }} utgjør en forskjell. Bli med i WWF-flokken du også!" />
+  <meta property="og:image" content="{{ phase.opengraph_thumbnail_url }}" />
+  <meta property="fb:app_id" content="123456789" />
+  <title>Hei {{ receiver.first_name }}</title>
 
-  <script>window.MSInputMethodContext && document.documentMode && document.write('<script src="js/ie11CustomProperties.js"><\x2fscript>');</script>
+  <script>window.MSInputMethodContext && document.documentMode && document.write('<script src="{% static "landingpages/wwf/js/ie11CustomProperties.js" %}"><\x2fscript>');</script>
 
   <script>
     function isIE() {
@@ -17,25 +25,26 @@
 
       return (msie > 0 || trident > 0);
     }
+
     if(isIE()){ 
-      document.write('<link href="css/video-js.css" rel="stylesheet">')
-      document.write('<script src="js/video.min.js"><\x2fscript>')
-      document.write('<script src="js/videojs-flash.js"><\x2fscript>')
-      document.write('<script src="js/videojs-contrib-hls.min.js"><\x2fscript>')
+      document.write('<link href="{% static "landingpages/wwf/css/video-js.css" %}" rel="stylesheet">')
+      document.write('<script src="{% static "landingpages/wwf/js/video.min.js" %}"><\x2fscript>')
+      document.write('<script src="{% static "landingpages/wwf/js/videojs-flash.js" %}"><\x2fscript>')
+      document.write('<script src="{% static "landingpages/wwf/js/videojs-contrib-hls.min.js" %}"><\x2fscript>')
     }
   </script>
 
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/vendor.css">
-  <link rel="stylesheet" href="css/theme.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{% static "landingpages/wwf/css/vendor.css" %}">
+  <link rel="stylesheet" href="{% static "landingpages/wwf/css/theme.css" %}">
+  <link rel="stylesheet" href="{% static "landingpages/wwf/css/style.css" %}">
 </head>
 <body>
   <nav class="topbar">
     <div class="container d-flex align-items-center justify-content-center justify-sm-content-between">
       <a href="#" class="topbar__logo d-block" title="Gå til WWF nettsiden">
-        <img src="img/logo.svg" alt="">
+        <img src="{% static "landingpages/wwf/img/logo.svg" %}" alt="">
       </a>
 
       <button class="btn btn--brand scroll_down hide-on-small-tablet">
@@ -52,7 +61,7 @@
 
     <div class="overlay d-flex align-items-center justify-content-center">
       <div>
-        <img src="img/icons/play.svg" alt="" class="hero__play cursor-pointer">
+        <img src="{% static "landingpages/wwf/img/icons/play.svg" %}" alt="" class="hero__play cursor-pointer">
       </div>
     </div>
   </div>
@@ -63,37 +72,37 @@
             <div class="content__buttons d-xs-flex align-items-center justify-content-end">
               <a href="#" class="btn btn--default" target="_blank" title="Besøk Coop.no" rel="noopener">
                 <div class="btn__content d-flex align-items-center justify-content-center">
-                  <img src="img/icons/globe.svg" alt="Besøk Coop.no">
+                  <img src="{% static "landingpages/wwf/img/icons/globe.svg" %}" alt="Besøk Coop.no">
                   <span class="hide-on-mobile">Besøk Coop.no</span>
                 </div>
               </a>
               <a href="#" class="btn btn--fb" target="_blank" title="Del på Facebook" rel="noopener">
                 <div class="btn__content d-flex align-items-center justify-content-center">
-                  <img src="img/icons/fcbk.svg" alt="Facebook">
+                  <img src="{% static "landingpages/wwf/img/icons/fcbk.svg" %}" alt="Facebook">
                   <span class="hide-on-mobile">Share on Facebook</span>
                 </div>
               </a>
               <a href="#" class="btn btn--in" target="_blank" title="Del på LinkedIn" rel="noopener">
                 <div class="btn__content d-flex align-items-center justify-content-center">
-                  <img src="img/icons/lnkdn.svg" alt="LinkedIn">
+                  <img src="{% static "landingpages/wwf/img/icons/lnkdn.svg" %}" alt="LinkedIn">
                   <span class="hide-on-mobile">Share on LinkedIn</span>
                 </div>
               </a>
               <a href="#" class="btn btn--fbm show-on-small-tablet" title="Del på Facebook Messenger" target="_blank" rel="noopener">
                 <div class="btn__content d-flex align-items-center justify-content-center">
-                  <img src="img/icons/messenger.svg" alt="Facebook messenger">
+                  <img src="{% static "landingpages/wwf/img/icons/messenger.svg" %}" alt="Facebook messenger">
                   <span class="hide-on-mobile">Share on Messenger</span>
                 </div>
               </a>
               <a href="#" class="btn btn--default" target="_blank" title="Send link med e-post" rel="noopener">
                 <div class="btn__content d-flex align-items-center justify-content-center">
-                  <img src="img/icons/email.svg" alt="Send link med e-post">
+                  <img src="{% static "landingpages/wwf/img/icons/email.svg" %}" alt="Send link med e-post">
                   <span class="hide-on-mobile">Send link med e-post</span>
                 </div>
               </a>
               <a href="#" class="btn btn--default" title="Last ned filmen" download>
                 <div class="btn__content d-flex align-items-center justify-content-center">
-                  <img src="img/icons/download.svg" alt="download">
+                  <img src="{% static "landingpages/wwf/img/icons/download.svg" %}" alt="download">
                   <span class="hide-on-mobile">Download</span>
                 </div>
               </a>
@@ -105,14 +114,14 @@
               <p class="content__body-text">Varepåfylling er både tungt og tidkrevende. Nå er det masse nye beste praksis verktøy tilgjengelig på intranett, samt et e-kurs i læringsportalen.</p>
               <p class="content__body-text">Håper det kan være til hjelp!</p>
               <a href="#" class="btn btn--brand">
-                <div class="btn__content d-flex align-items-center justify-content-center">Følg linken her</div>
+                <div class="btn__content d-flex align-items-center justify-content-center" title="Gå til portalen">Følg linken her</div>
               </a>
               <p class="content__body-text">Dersom ikke linken til intranett fungerer finner dere frem
                 ved å:</p>
               <ul class="content__body-list">
                 <li>Gå til butikk og salg på intranett</li>
                 <li>Gå videre til Beste praksis og butikkrutiner</li>
-                <li>Send innspill til <a href="mailto:smart@coop.no">smart@coop.no</a> dersom du forbedringsforslag</li>
+                <li>Send innspill til <a href="mailto:smart@coop.no" title="Send innspill">smart@coop.no</a> dersom du forbedringsforslag</li>
               </ul>
               <p class="content__body-text">Målgruppen for rutiner er butikksjef, mens målgruppen for metodekort, sjekklister, mm. er øvrige ansatte som jobber med varepåfylling.</p>
             </div>
@@ -125,7 +134,7 @@
                   </div>
                   <div class="overlay d-flex justify-content-center align-items-center">
                     <div>
-                      <img src="img/icons/play--secondary.svg" alt="">
+                      <img src="{% static "landingpages/wwf/img/icons/play--secondary.svg" %}" alt="">
                     </div>
                   </div>
                 </div>
@@ -136,11 +145,11 @@
               <div class="carousel__slide" data-src="video/index.m3u8">
                 <div class="slide__media position-relative">
                   <div class="content">
-                    <img src="img/poster.jpg" alt="">
+                    <img src="{% static "landingpages/wwf/img/poster.jpg" %}" alt="">
                   </div>
                   <div class="overlay d-flex justify-content-center align-items-center">
                     <div>
-                      <img src="img/icons/play--secondary.svg" alt="">
+                      <img src="{% static "landingpages/wwf/img/icons/play--secondary.svg" %}" alt="">
                     </div>
                   </div>
                 </div>
@@ -151,11 +160,11 @@
               <div class="carousel__slide" data-src="video/index.m3u8">
                 <div class="slide__media position-relative">
                   <div class="content">
-                    <img src="img/poster.jpg" alt="">
+                    <img src="{% static "landingpages/wwf/img/poster.jpg" %}" alt="">
                   </div>
                   <div class="overlay d-flex justify-content-center align-items-center">
                     <div>
-                      <img src="img/icons/play--secondary.svg" alt="">
+                      <img src="{% static "landingpages/wwf/img/icons/play--secondary.svg" %}" alt="">
                     </div>
                   </div>
                 </div>
@@ -166,11 +175,11 @@
               <div class="carousel__slide" data-src="video/index.m3u8">
                 <div class="slide__media position-relative">
                   <div class="content">
-                    <img src="img/poster.jpg" alt="">
+                    <img src="{% static "landingpages/wwf/img/poster.jpg" %}" alt="">
                   </div>
                   <div class="overlay d-flex justify-content-center align-items-center">
                     <div>
-                      <img src="img/icons/play--secondary.svg" alt="">
+                      <img src="{% static "landingpages/wwf/img/icons/play--secondary.svg" %}" alt="">
                     </div>
                   </div>
                 </div>
@@ -181,11 +190,11 @@
               <div class="carousel__slide" data-src="video/index.m3u8">
                 <div class="slide__media position-relative">
                   <div class="content">
-                    <img src="img/poster.jpg" alt="">
+                    <img src="{% static "landingpages/wwf/img/poster.jpg" %}" alt="">
                   </div>
                   <div class="overlay d-flex justify-content-center align-items-center">
                     <div>
-                      <img src="img/icons/play--secondary.svg" alt="">
+                      <img src="{% static "landingpages/wwf/img/icons/play--secondary.svg" %}" alt="">
                     </div>
                   </div>
                 </div>
@@ -204,9 +213,9 @@
     <p>POWERED BY <a href="#" title="Gå til Storm 121 nettsiden"><b>STORM 121</b></a></p>
   </div>
   
-  <script src="js/tiny-slider.js"></script>
-  <script src="js/hls.js"></script>
-  <script src="js/smoothscroll.js"></script>
-  <script src="js/main.js"></script>
+  <script src="{% static "landingpages/wwf/js/tiny-slider.js" %}"></script>
+  <script src="{% static "landingpages/wwf/js/hls.js" %}"></script>
+  <script src="{% static "landingpages/wwf/js/smoothscroll.js" %}"></script>
+  <script src="{% static "landingpages/wwf/js/main.js" %}"></script>
 </body>
 </html>

@@ -122,14 +122,14 @@ document.addEventListener('DOMContentLoaded', function(){
     return xhr;
   }
 
-  var buttons = document.querySelectorAll(".content__buttons a");
+  var buttons = document.querySelectorAll("a");
   for( i=0; i < buttons.length; i++){
     buttons[i].addEventListener('click', function() {
-      postAjax('{% url "register_event" uuid=phase.uuid %}', 
+      postAjax(document.querySelector('html').getAttribute('data-register-event'), 
               JSON.stringify({ 
                 event: 'A_CLICK',
                 originalUrl: window.location.href,
-                lpid: '{{ landing_page_id }}',
+                lpid: document.querySelector('html').getAttribute('data-page-id'),
                 href: this.href,
                 title: this.title
               }), 
@@ -143,22 +143,22 @@ document.addEventListener('DOMContentLoaded', function(){
   player.addEventListener('play', function(){
     if (this.seeking || this.currentTime >= 0.1) return;
 
-    postAjax('{% url "register_event" uuid=phase.uuid %}', 
+    postAjax(document.querySelector('html').getAttribute('data-register-event'), 
             JSON.stringify({ 
               event: 'VID_PLAY',
               originalUrl: window.location.href,
-              lpid: '{{ landing_page_id }}'
+              lpid: document.querySelector('html').getAttribute('data-page-id')
             }), 
             function(data){ console.log(data); }
     );
   }, false);
 
   player.addEventListener('ended', function(){
-    postAjax('{% url "register_event" uuid=phase.uuid %}', 
+    postAjax(document.querySelector('html').getAttribute('data-register-event'), 
             JSON.stringify({ 
               event: 'VID_WATCHED',
               originalUrl: window.location.href,
-              lpid: '{{ landing_page_id }}'
+              lpid: document.querySelector('html').getAttribute('data-page-id')
             }), 
             function(data){ console.log(data); }
     );

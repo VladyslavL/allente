@@ -25,6 +25,9 @@
   /* Please use rem units for better responsiveness (1rem = 10px) */
   --fz__secondary: 1.8rem;
 
+  /* Subtitles font size */ 
+  --fz__subtitles: 3rem;
+
   /* brand color */
   --color__brand: #00234f;
 
@@ -39,6 +42,12 @@
 
   /* Secondary color of the website (footer) */
   --color__text--secondary: #828282;
+
+  /* Subtitle color */
+  --color__subtitle: yellow;
+
+  /* Subtitle background color */
+  --color__subtitle--background: transparent;
 
   /* Logo height */ 
   --height__logo: 4rem;
