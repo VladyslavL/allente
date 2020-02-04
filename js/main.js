@@ -103,9 +103,11 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 
   // Scroll the page on .scroll_down click
-  document.querySelector('.scroll_down').addEventListener(clickEventType, function () {
-    document.querySelector('.content').scrollIntoView({behavior: 'smooth'})
-  });
+  if(document.querySelector('.scroll_down') !== null){
+    document.querySelector('.scroll_down').addEventListener(clickEventType, function () {
+      document.querySelector('.content').scrollIntoView({behavior: 'smooth'})
+    });
+  }
 
 
   // Play video on .hero__play click
