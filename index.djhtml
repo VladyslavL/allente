@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="nv" data-page-id="{{ landing_page_id }}" data-register-event='{% url "register_event" uuid=phase.uuid %}'>
+<html lang="nb" data-page-id="{{ landing_page_id }}" data-register-event='{% url "register_event" uuid=phase.uuid %}'>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,7 +54,7 @@
   </nav>
 
   <div class="hero position-relative">
-    <video autoplay playsinline muted controls id="main-video" class="hero__video playing" src="video/index.m3u8" type="application/x-mpegURL">
+    <video autoplay playsinline muted controls id="main-video" class="hero__video playing" src="{{ phase.video_url }}" type="application/x-mpegURL">
       <track src="track/track.vtt" kind="subtitles" srclang="en" label="English" default="default">
       <track src="track/track.vtt" kind="subtitles" srclang="no" label="Norwegian">
     </video>
@@ -210,7 +210,7 @@
 
   <div class="footer d-sm-flex justify-content-center text-center text-caps">
     <p>© 2020 coop. ALL RIGHTS RESERVED</p>
-    <p>POWERED BY <a href="#" title="Gå til Storm 121 nettsiden"><b>STORM 121</b></a></p>
+    <p>POWERED BY <a href="http://storm121.com" title="Gå til Storm 121 nettsiden" target="_blank"><b>STORM 121</b></a></p>
   </div>
   
   <script src="{% static "landingpages/wwf/js/tiny-slider.js" %}"></script>
