@@ -5,12 +5,13 @@ document.addEventListener('DOMContentLoaded', function(){
   var initHLS = function(){
     if(Hls.isSupported()) {
       var hls = new Hls();
-      hls.loadSource(player.src);
+      hls.loadSource(player.getAttribute('data-src'));
       hls.attachMedia(player);
       hls.on(Hls.Events.MANIFEST_PARSED,function() {
         player.play();
     });
    }else{
+     player.src = player.getAttribute('data-src');
      player.play();
      console.log('no hls');
      if(window.MSInputMethodContext) {
