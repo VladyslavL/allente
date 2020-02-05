@@ -21,6 +21,11 @@
         visibility: hidden;
       }
     }
+    &.paused{
+      &::-webkit-media-controls-overlay-play-button {
+        display: none;
+      }
+    }
   }
   &__play{
     position: absolute;

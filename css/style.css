@@ -291,6 +291,10 @@ img {
   visibility: hidden;
 }
 
+.hero__video.paused::-webkit-media-controls-overlay-play-button {
+  display: none;
+}
+
 .hero__play {
   position: absolute;
   top: 50%;

@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // Play video on .hero__play click
   if(document.querySelector('.hero__play') !== null){
-    document.querySelector('.hero__play').addEventListener(clickEventType, function () {
+    document.querySelector('.hero__play').addEventListener('click', function () {
       player.play();
     });
   }
