@@ -1,4 +1,13 @@
-<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M50 85C69.33 85 85 69.33 85 50C85 30.67 69.33 15 50 15C30.67 15 15 30.67 15 50C15 69.33 30.67 85 50 85ZM44 58.6603L59 50L44 41.3397V58.6603Z" fill="white"/>
-<circle opacity="0.5" cx="50" cy="50" r="44.5" stroke="white"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="90px" height="90px" viewBox="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>play</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="play">
+            <path d="M45,80 C64.33,80 80,64.33 80,45 C80,25.67 64.33,10 45,10 C25.67,10 10,25.67 10,45 C10,64.33 25.67,80 45,80 Z" id="Shape" fill="#FFFFFF"></path>
+            <polygon id="Path" fill-opacity="0.496913243" fill="#000000" points="39 53.6603 54 45 39 36.3397"></polygon>
+            <circle id="Oval" stroke="#FFFFFF" opacity="0.5" cx="45" cy="45" r="44.5"></circle>
+        </g>
+    </g>
 </svg>
