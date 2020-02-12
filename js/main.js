@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', function(){
       // hls.loadSource(player.src);
       hls.attachMedia(player);
       hls.on(Hls.Events.MANIFEST_PARSED,function() {
-        player.play();
+        // player.play();
     });
    }else{
      player.src = player.getAttribute('data-src');
-     player.play();
+    //  player.play();
      console.log('no hls');
      if(window.MSInputMethodContext) {
       player.classList.add('video-js')
@@ -100,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function(){
         player.src = this.getAttribute('data-src');
         initHLS();
         document.querySelector('.topbar').scrollIntoView({behavior: 'smooth'})
+        player.play();
       });
     }
   }
