@@ -6,14 +6,6 @@
     display: block;
     width: 100%;
     outline: none;
-    // &::cue{
-    //   color: var(--color__subtitle);
-    //   background: var(--color__subtitle--background) !important;
-    //   font-size: var(--fz__subtitles)
-    // }
-    // &::-webkit-media-text-track-background{
-    //   background: var(--color__subtitle--background) !important;
-    // }
     &.playing{
       & + .overlay,
       & + div .hero__play{

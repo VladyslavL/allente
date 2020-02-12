@@ -6,14 +6,10 @@ document.addEventListener('DOMContentLoaded', function(){
     if(Hls.isSupported()) {
       var hls = new Hls();
       hls.loadSource(player.getAttribute('data-src'));
-      // hls.loadSource(player.src);
       hls.attachMedia(player);
-      hls.on(Hls.Events.MANIFEST_PARSED,function() {
-        // player.play();
-    });
+      // hls.config.debug = true;
    }else{
      player.src = player.getAttribute('data-src');
-    //  player.play();
      console.log('no hls');
      if(window.MSInputMethodContext) {
       player.classList.add('video-js')
