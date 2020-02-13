@@ -6,7 +6,8 @@
     display: block;
     width: 100%;
     outline: none;
-    &.playing{
+    &.playing,
+    &.vjs-playing{
       & + .overlay,
       & + div .hero__play{
         opacity: 0;

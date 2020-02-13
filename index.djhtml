@@ -215,13 +215,7 @@
   <script src="{% static "landingpages/wwf-test/js/hls.js" %}"></script>
   <script src="{% static "landingpages/wwf-test/js/smoothscroll.js" %}"></script>
   <script src="{% static "landingpages/wwf-test/js/main.js" %}"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
-  <script>
-  WebFont.load({
-      google: {
-        families: ['Roboto:400,500,700']
-      }
-    });
-  </script>
+  <script src="{% static "landingpages/wwf-test/js/webfont.js" %}"></script>
+  <script src="{% static "landingpages/wwf-test/js/font-config.js" %}"></script>
 </body>
 </html>

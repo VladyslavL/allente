@@ -1,6 +1,14 @@
 document.addEventListener('DOMContentLoaded', function(){
   // Init HLS
   var player = document.querySelector('.hero__video');
+  if(!Hls.isSupported() && window.MSInputMethodContext) {
+    console.log('flash')
+    player.classList.add('video-js')
+    player.classList.add('vjs-default-skin')
+    var videojsPlayer = videojs(player, {
+      fluid: true
+    });
+  }
 
   var initHLS = function(){
     if(Hls.isSupported()) {
@@ -12,21 +20,17 @@ document.addEventListener('DOMContentLoaded', function(){
      player.src = player.getAttribute('data-src');
      console.log('no hls');
      if(window.MSInputMethodContext) {
-      player.classList.add('video-js')
-      player.classList.add('vjs-default-skin')
-       var videojsPlayer = videojs(player, {
-         fluid: true
-       });
        videojsPlayer.src(
          {
            src: player.src
          }
        );
      }
-     }
+    }
   }
 
-  var videoWather = function(){
+
+  var videoWatcher = function(){
     player.addEventListener('playing', function(){
       player.classList.remove('paused');
       player.classList.add('playing');
@@ -48,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function(){
   console.log(clickEventType)
 
   initHLS();
-  videoWather();
+  videoWatcher();
 
   if(document.querySelector('.carousel') !== null){
     // Init carousel
@@ -86,19 +90,24 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   
     var slides = document.querySelectorAll(".carousel__slide");
-    for( i=0; i < slides.length; i++){
-      slides[i].addEventListener('click', function() {
-        if (isSliding) {
-          event.stopPropagation();
-          event.preventDefault();
-          return false;
-        }
-        player.src = this.getAttribute('data-src');
-        initHLS();
-        document.querySelector('.topbar').scrollIntoView({behavior: 'smooth'})
-        player.play();
-      });
-    }
+      for( i=0; i < slides.length; i++){
+        slides[i].addEventListener('click', function() {
+          if (isSliding) {
+            event.stopPropagation();
+            event.preventDefault();
+            return false;
+          }
+          player.src = this.getAttribute('data-src');
+          document.querySelector('.topbar').scrollIntoView({behavior: 'smooth'})
+          if(Hls.isSupported()) {
+            initHLS();
+          }
+          player.play();
+          if (videojsPlayer !== undefined){
+            videojsPlayer.play();
+          }
+        });
+      }
   }
 
   // Scroll the page on .scroll_down click
@@ -113,6 +122,9 @@ document.addEventListener('DOMContentLoaded', function(){
   if(document.querySelector('.hero__play') !== null){
     document.querySelector('.hero__play').addEventListener('click', function () {
       player.play();
+      if (videojsPlayer !== undefined){
+        videojsPlayer.play();
+      }
     });
   }
 

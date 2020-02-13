@@ -32,7 +32,6 @@ a:hover {
 
 img {
   display: block;
-  max-width: 100%;
 }
 
 .cursor-pointer {
@@ -286,7 +285,8 @@ img {
 }
 
 .hero__video.playing + .overlay,
-.hero__video.playing + div .hero__play {
+.hero__video.playing + div .hero__play, .hero__video.vjs-playing + .overlay,
+.hero__video.vjs-playing + div .hero__play {
   opacity: 0;
   visibility: hidden;
 }
