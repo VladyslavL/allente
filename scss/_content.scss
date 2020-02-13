@@ -20,12 +20,12 @@
   }
   &__body{
     padding-top: 4rem;
-    padding-bottom: 4rem;
+    // padding-bottom: 4rem;
     font-size: 1.4rem;
     line-height: 1.5;
     @include respond-above(sm){
       padding-top: 2rem;
-      padding-bottom: 2rem;
+      // padding-bottom: 2rem;
       font-size: 1.8rem;
     }
     &-columns{

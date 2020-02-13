@@ -34,6 +34,7 @@
     }
   </script>
 
+  <link rel="stylesheet" href="{% static "landingpages/wwf-test/css/tiny-slider.css" %}">
   <link rel="stylesheet" href="{% static "landingpages/wwf-test/css/theme.css" %}">
   <link rel="stylesheet" href="{% static "landingpages/wwf-test/css/style.css" %}">
 </head>
@@ -210,6 +211,7 @@
     <p>POWERED BY <a href="http://storm121.com" title="Gå til Storm 121 nettsiden" target="_blank"><b>STORM 121</b></a></p>
   </div>
   
+  <script src="{% static "landingpages/wwf-test/js/tiny-slider.js" %}"></script>
   <script src="{% static "landingpages/wwf-test/js/hls.js" %}"></script>
   <script src="{% static "landingpages/wwf-test/js/smoothscroll.js" %}"></script>
   <script src="{% static "landingpages/wwf-test/js/main.js" %}"></script>
