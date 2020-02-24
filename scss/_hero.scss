@@ -6,6 +6,7 @@
     display: block;
     width: 100%;
     outline: none;
+    background: #000;
     &.playing,
     &.vjs-playing{
       & + .overlay,

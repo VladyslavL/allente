@@ -282,6 +282,7 @@ img {
   display: block;
   width: 100%;
   outline: none;
+  background: #000;
 }
 
 .hero__video.playing + .overlay,
