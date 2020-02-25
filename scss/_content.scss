@@ -29,10 +29,12 @@
       font-size: 1.8rem;
     }
     &-columns{
-      @include respond-above(sm){
-        column-count: 2;
-        column-gap: 6rem;
-      } 
+      &.two-columns{
+        @include respond-above(sm){
+          column-count: 2;
+          column-gap: 6rem;
+        }
+      }
     }
     &-header{
       line-height: 1;

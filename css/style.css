@@ -346,7 +346,7 @@ img {
 }
 
 @media (min-width: 768px) {
-  .content__body-columns {
+  .content__body-columns.two-columns {
     -webkit-column-count: 2;
        -moz-column-count: 2;
             column-count: 2;

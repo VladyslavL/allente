@@ -51,7 +51,7 @@
   </nav>
 
   <div class="hero position-relative">
-    <video controls id="main-video" class="hero__video" data-src="{{ phase.video_url }}" type="application/x-mpegURL">
+    <video controls id="main-video" class="hero__video" data-src="{{ phase.video_url }}" type="application/x-mpegURL" poster="#">
       <track src="track/track.vtt" kind="subtitles" srclang="en" label="English" default>
       <track src="track/track.vtt" kind="subtitles" srclang="no" label="Norwegian">
     </video>
@@ -107,7 +107,7 @@
 
             <h1 class="content__body-header">Hei Ann!</h1>
 
-            <div class="content__body-columns">
+            <div class="content__body-columns two-columns">
               <p class="content__body-text">Varepåfylling er både tungt og tidkrevende. Nå er det masse nye beste praksis verktøy tilgjengelig på intranett, samt et e-kurs i læringsportalen.</p>
               <p class="content__body-text">Håper det kan være til hjelp!</p>
               <a href="#" class="btn btn--brand">
