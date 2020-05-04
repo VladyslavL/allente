@@ -211,13 +211,13 @@ img {
 }
 
 .btn__content {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   height: 100%;
 }
 
 .btn__content span {
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
 }
 
 .btn--default {
@@ -311,6 +311,12 @@ img {
 .content__buttons .btn {
   display: block;
   margin-top: 2rem;
+}
+
+.content__buttons .no-btn{
+  display: block;
+  padding: 1.5rem;
+  text-align: center;
 }
 
 .content__buttons .btn img {
