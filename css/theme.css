@@ -22,12 +22,12 @@
   /* Subtitles font size */
   --fz__subtitles: 3rem;
   /* brand color */
-  --color__brand: #00234f;
+  --color__brand: #060D3C;
   /* buttons background colors */
   --color__fb: #415893;
   --color__fbm: #0078ff;
   --color__in: #0075a8;
-  --color__default: #2b2e2f;
+  --color__default: #02AF8A;
   /* Primary color of the website (content) */
   --color__text--primary: #000;
   /* Secondary color of the website (footer) */
